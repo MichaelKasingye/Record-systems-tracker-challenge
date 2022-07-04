@@ -76,7 +76,7 @@
     "xlsx": "^0.17.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "export HTTPS=true&&SSL_CRT_FILE=cert.pem&&SSL_KEY_FILE=key.pem react-scripts start",
     "build": "react-scripts build",
     "test": "npx cypress run  --record --key f12656e4-fb5b-4ec9-a3ac-d72b9c6b2d1f",
     "eject": "react-scripts eject"
