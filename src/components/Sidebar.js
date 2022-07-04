@@ -192,11 +192,11 @@ const Sidebar = (props = {}) => {
                 icon={faCalendarAlt}
                 link={"/dashboard/contacts"}
               />
-              {/* <NavItem
-                title="User List"
+              <NavItem
+                title="All Courses"
                 icon={faUserAlt}
-                link={"/dashboard/user-list"}
-              /> */}
+                link={"/dashboard/courses"}
+              />
               {/* <NavItem
                 title="Projects"
                 icon={faBriefcase}
