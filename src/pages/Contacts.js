@@ -30,6 +30,14 @@ const Contacts = () => {
 	// .catch(err => console.error(err));
  }, [dispatch])
   
+
+ if (loading) {
+  return <h1>loading...</h1>
+}
+if (hasErrors) {
+  return <h1>ERROR...</h1>
+}
+
   return (
     <>
       <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">

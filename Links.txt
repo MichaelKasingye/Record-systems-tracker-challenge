@@ -1,0 +1,1 @@
+Fix ssl issues: https://flaviocopes.com/react-how-to-configure-https-localhost/
