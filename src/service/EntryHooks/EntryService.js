@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
-import { requestRegistrationURL } from "../../utils/axios-utils";
+import { request } from "../../utils/axios-utils";
 
 const fetchRegistrationData = () => {
-    return requestRegistrationURL({ url: '/contacts'})
+    return request({ url: '/contacts'})
 }
 export default async function createEntry(data) {
     try {
