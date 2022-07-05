@@ -3,9 +3,11 @@ export const Routes = {
   Dashboard: { path: "/dashboard" },
   AddEvent: { path: "/dashboard/entry/new" },
   Contacts: { path: "/dashboard/Contacts" },
-  UserList: { path: "/dashboard/user-list" },
+  FormCourses: { path: "/dashboard/formCourses" },
+
+  FormContact: { path: "/dashboard/formContact" },
   Addproject: { path: "/dashboard/addProject" },
   EditProject: { path: "/dashboard/edit/event" },
-  Enrollment: { path: "/dashboard/enrollment" },
+  Districts: { path: "/dashboard/districts" },
   Courses: { path: "/dashboard/courses" },
 };

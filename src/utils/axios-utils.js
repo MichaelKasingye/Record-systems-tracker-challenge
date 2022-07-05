@@ -1,17 +1,17 @@
 import axios from "axios";
-import { JWT } from "./jwt";
+// import { JWT } from "./jwt";
 
-const registrationURL = axios.create({
+const requestURL = axios.create({
   baseURL: "http://www.registration.unmc.ug/api/v1",
 });
 
-export const requestRegistrationURL = ({ ...options }) => {
-  registrationURL.defaults.headers.common.Authorization = JWT.get_all_contacts;
+export const request = ({ ...options }) => {
+  requestURL.defaults.headers.common.Authorization = localStorage.getItem("JWT");;
 
   const onSuccess = (response) => response;
   const onError = (error) => {
-    console.log("ERROR:..." + error);
+    // console.log("ERROR:..." + error);
     return error;
   };
-  return registrationURL(options).then(onSuccess).catch(onError);
+  return requestURL(options).then(onSuccess).catch(onError);
 };

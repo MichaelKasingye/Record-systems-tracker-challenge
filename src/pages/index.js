@@ -3,21 +3,24 @@ import Contacts from "./Contacts";
 import Login from "./Login";
 import NewEntry from "./NewEntry";
 import NotFound from "./NotFound";
-import UserList from "./UserList";
+import FormContact from "./FormContact";
 import Addproject from "./Addproject";
 import EditEvent from "./EditEvent";
-import Enrollment from "./Enrollment";
+import Districts from "./Districts";
 import Courses from "./Courses";
+import FormCourses from "./FormCourses";
+
 
 export {
   Dashboard,
+  FormCourses,
   Contacts,
   Login,
   NewEntry,
   NotFound,
-  UserList,
+  FormContact,
   Addproject,
   EditEvent,
-  Enrollment,
+  Districts,
   Courses,
 };
