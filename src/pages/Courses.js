@@ -23,7 +23,7 @@ const Contacts = () => {
  const dispatch = useDispatch();
 // 
  useEffect(() => {
-   dispatch(fetchEntriesAsync('/contacts'));
+   dispatch(fetchEntriesAsync('/courses'));
   // fetch('http://www.registration.unmc.ug/api/v1/contacts/')
 	// .then(response => response.json())
 	// .then(data => console.log(data))
@@ -60,7 +60,7 @@ if (hasErrors) {
         </ButtonGroup>
       </div>
 
-      <CustomTable data = {Entries.data?.data} />
+      {/* <CustomTable data = {Entries.data?.data} /> */}
     
     </>
   );

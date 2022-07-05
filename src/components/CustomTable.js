@@ -97,8 +97,8 @@ const customButton = withReactContent(
               <tr>
               <th className="border-bottom"><FontAwesomeIcon icon={faEdit} className="me-2" /></th>
                 <th className="border-bottom">Id</th>
-                <th className="border-bottom">Image</th>
-                <th className="border-bottom">Title</th>
+                <th className="border-bottom">Phone Number</th>
+                <th className="border-bottom">Created at</th>
                 {/* <th className="border-bottom">Price</th>
                 <th className="border-bottom">Category</th> */}
               </tr>
