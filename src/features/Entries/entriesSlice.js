@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import createEvent from "../../service/Entry/EntryService";
+import createEvent from "../../service/EntryHooks/EntryService";
 
-import deleteEntry from "../../service/Entry/DeleteService";
-import getEntries from "../../service/Entry/getEntriesService";
-import getAnEntryService from "../../service/Entry/getAnEntryService";
-import UpdateEntryService from "../../service/Entry/UpdateEntryService";
+import deleteEntry from "../../service/EntryHooks/DeleteService";
+import {useRegistrationData} from "../../service/EntryHooks/entriesService";
+import getAnEntryService from "../../service/EntryHooks/getAnEntryService";
+import UpdateEntryService from "../../service/EntryHooks/UpdateEntryService";
 
 const initialState = {
   Entries: [],
@@ -48,7 +48,7 @@ export const fetchEntriesAsync = (endpoint) => {
   return async (dispatch) => {
     dispatch(fetchEntries());
     try {
-      getEntries(endpoint).then((Entries) => dispatch(fetchEntriesSuccess(Entries)));
+      useRegistrationData(endpoint).then((Entries) => dispatch(fetchEntriesSuccess(Entries)));
     } catch (error) {
       dispatch(fetchEntriesFailure(error));
     }

@@ -26,9 +26,9 @@ const Contacts = () => {
     console.log({ error })
   }
 
-  const {isloading, data, isError, error,} = useRegistrationData(onSuccess,onError, '/courses');
-  localStorage.setItem("JWT", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3NjIzNTEzLCJqdGkiOiI3ODg1MDE2MGVmOTM0MzQ1YThhOTg4N2E5MmY0OTM2NiIsInVzZXJfaWQiOiJjMDBhMzI5Mi1lNTlhLTQ2Y2EtYmM3ZC00NzNhMTFhNjFiNjAiLCJyb2xlIjoiYWRtaW4ifQ.sjMnunsbsLGmqCZbLVi3TQ7khfbQJltu8UnDlQ9etPo");
-
+  const {isloading, data, isError, error,} = useRegistrationData(onSuccess,onError, '/districts');
+  localStorage.setItem("JWT", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4MDQ2NjgwLCJqdGkiOiIwZTRiYmViODM0NzY0NTRlOGM1NGM1ZjljMDc3MjdkYyIsInVzZXJfaWQiOiIxNTE4MzdlOC1iYmJhLTQ0OGYtODM5NC1lZGQwZmQ2OWQyZTciLCJyb2xlIjoicmVjb3JkcyBvZmZpY2VyIn0.HT51NRbQ6GJtDYx3m8zb6IVbuWnn4GzcDTn27G1MVig");
+  
 //  const { Entries, loading, hasErrors } = useSelector(EntriesSelector)
 //  console.log(Entries.data?.data);
 //  console.log(loading);
@@ -43,31 +43,18 @@ const Contacts = () => {
 // 	.then(data => console.log(data))
 // 	.catch(err => console.error(err));
 //  }, [])
-  
-// useEffect(() => {
-//   const myHeaders = new Headers();
-//   myHeaders.append('Content-Type', 'application/json');
-// myHeaders.append('Authorization', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3NjIzNTEzLCJqdGkiOiI3ODg1MDE2MGVmOTM0MzQ1YThhOTg4N2E5MmY0OTM2NiIsInVzZXJfaWQiOiJjMDBhMzI5Mi1lNTlhLTQ2Y2EtYmM3ZC00NzNhMTFhNjFiNjAiLCJyb2xlIjoiYWRtaW4ifQ.sjMnunsbsLGmqCZbLVi3TQ7khfbQJltu8UnDlQ9etPo');
 
-//   return fetch('http://www.registration.unmc.ug/api/v1/courses', {
-//     method: 'GET',
-//     mode: 'no-cors',
-//     headers: myHeaders,
-//   })
-//     .then(response => response.json())
-//     .then((data) => {
-//       console.log(data);
-//       // console.log(user.location);
-//     })
-//     .catch((error) => {
-//       console.error(error);
-//     });
+//    useEffect(() => {
+//   fetch( 'http://www.registration.unmc.ug/api/v1/districts/' )
+// 	.then(response => response.json())
+// 	.then(data => console.log(data))
+// 	.catch(err => console.error(err));
 //  }, [])
 
 // let registrationData = data?.data.data;
 let ErrorMesssage = data?.message;
 
-// console.log(ErrorMesssage);
+console.log(data);
 
 if (isloading) {
   return <h1>loading...</h1>
@@ -86,13 +73,13 @@ if (error) {
       </div>
       <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
         <Dropdown className="btn-toolbar">
-            <Link to={"/dashboard/formCourses"}>
+            {/* <Link to={"/dashboard/entry/new"}>
           <Dropdown.Toggle as={Button} variant="primary" size="sm" className="me-2">
            
             <FontAwesomeIcon icon={faPlus} className="me-2" />
             New Entry
           </Dropdown.Toggle>
-            </Link>
+            </Link> */}
         </Dropdown>
 
         {/* <ButtonGroup>

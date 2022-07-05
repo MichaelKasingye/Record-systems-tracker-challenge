@@ -86,7 +86,7 @@ useEffect(() => {
               >
                 <div className="card-body text-center">
                   <div >
-                  <img src="/android-chrome-192x192.png" width="100" alt="logo" className="rounded-3 border "/>
+                  {/* <img src="/android-chrome-192x192.png" width="100" alt="logo" className="rounded-3 border "/> */}
                   </div>
                   <h1>Dashboard</h1>
                   <p>Login to Manage Records-system" activities</p>

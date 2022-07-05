@@ -11,7 +11,7 @@ import { createEventAsync, EntriesSelector, deleteEntryAsync } from '../features
 import withReactContent from 'sweetalert2-react-content';
 import Swal from 'sweetalert2';
 
-import deleteEntry from "../service/Entry/DeleteService";
+import deleteEntry from "../service/EntryHooks/DeleteService";
 
 const customButton = withReactContent(
   Swal.mixin({
@@ -25,7 +25,7 @@ const customButton = withReactContent(
     const CustomTable = ({data}) => {
       const dispatch = useDispatch();
       // const infoData = data.data
- console.log(data);
+//  console.log(data);
 
       const { projects } = useSelector(projectsSelector);
 
