@@ -87,7 +87,7 @@ const EditEntry = () => {
         <div className="d-flex"></div>
       </div>
       <p>View Training</p>
-      <h3>{registrationData.name ? registrationData.name : " "}</h3>
+      <h3>{registrationData?.name ? registrationData.name : " "}</h3>
       {/* <DescriptionWidget info={registrationData} title="" /> */}
 
       <Col xs={12} xl={12} className="mb-1">
@@ -98,9 +98,9 @@ const EditEntry = () => {
               info1={registrationData.healthFacility}
               info2Title="District"
               info2={
-                !registrationData.district.name
+                !registrationData.district?.name
                   ? " "
-                  : registrationData.district.name
+                  : registrationData.district?.name
               }
               info3Title="Address"
               info3={registrationData.address}
