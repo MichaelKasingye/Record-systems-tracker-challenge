@@ -78,7 +78,7 @@ const EditEntry = () => {
   // console.log(registrationData);
 
   if (!data) {
-    return <h1>loading...</h1>;
+    return <h1>loading...</h1>
   }
 
   return (
