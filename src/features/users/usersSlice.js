@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import getUsers, { searchUsers } from "../../service/getUserService";
+import getUsers, { searchUsers } from "../../service/znullFill";
 
 const initialState = {
   users: [],

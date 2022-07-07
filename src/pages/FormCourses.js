@@ -20,23 +20,23 @@ const FormContact = () => {
   const { mutate, isLoading, isError, error } = useAddEntryCourse();
 
   const [data, setData] = useState({
-    name: '',
-    durationYears: '',
-    professionalQualification: '',
-    cadre: ''
+    name: "",
+    durationYears: "",
+    professionalQualification: "",
+    cadre: "",
   });
 
   const finalData = {
     name: data.name,
     durationYears: data.durationYears,
     professionalQualification: data.professionalQualification,
-    cadre: data.cadre
+    cadre: data.cadre,
   };
 
   console.log(isLoading);
   localStorage.setItem(
     "JWT",
-    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZ    XhwIjoxNjU3NjIzNTEzLCJqdGkiOiI3ODg1MDE2MGVmOTM0MzQ1YThhOTg4N    2E5MmY0OTM2NiIsInVzZXJfaWQiOiJjMDBhMzI5Mi1lNTlhLTQ2Y2EtYmM3ZC    00NzNhMTFhNjFiNjAiLCJyb2xlIjoiYWRtaW4ifQ.sjMnunsbsLGmqCZbLVi3TQ7khfbQJltu8UnDlQ9etPo"
+    "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3NjIzNTEzLCJqdGkiOiI3ODg1MDE2MGVmOTM0MzQ1YThhOTg4N2E5MmY0OTM2NiIsInVzZXJfaWQiOiJjMDBhMzI5Mi1lNTlhLTQ2Y2EtYmM3ZC00NzNhMTFhNjFiNjAiLCJyb2xlIjoiYWRtaW4ifQ.sjMnunsbsLGmqCZbLVi3TQ7khfbQJltu8UnDlQ9etPo"
   );
 
   const handleSubmit = (e) => {
@@ -45,13 +45,13 @@ const FormContact = () => {
     mutate(finalData);
     customButton.fire("Success", "Entry created successfully", "success");
     setData({
-      name: '',
-      durationYears:'',
-      professionalQualification:'',
-      cadre:''
+      name: "",
+      durationYears: "",
+      professionalQualification: "",
+      cadre: "",
     });
   };
-console.log(data.cadre);
+  console.log(data.cadre);
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
@@ -72,10 +72,10 @@ console.log(data.cadre);
                   <Form.Control
                     required
                     type="text"
-                    maxLength = "40"
+                    maxLength="40"
                     placeholder="Enter Name"
                     name="name"
-                    value={data.name }
+                    value={data.name}
                     onChange={handleChange}
                   />
                 </Form.Group>
@@ -86,10 +86,10 @@ console.log(data.cadre);
                   <Form.Control
                     required
                     type="text"
-                    maxLength = "15"
+                    maxLength="15"
                     placeholder="Enter Cadre"
                     name="cadre"
-                    value={data.cadre }
+                    value={data.cadre}
                     onChange={handleChange}
                   />
                 </Form.Group>
@@ -100,10 +100,10 @@ console.log(data.cadre);
                   <Form.Control
                     required
                     type="text"
-                    maxLength = "40"
+                    maxLength="40"
                     placeholder="Enter Professional Qualification"
                     name="professionalQualification"
-                    value={data.professionalQualification }
+                    value={data.professionalQualification}
                     onChange={handleChange}
                   />
                 </Form.Group>
@@ -114,7 +114,7 @@ console.log(data.cadre);
                   <Form.Control
                     required
                     type="number"
-                    max="100"
+                    max="10"
                     placeholder=" Enter Duration Years"
                     name="durationYears"
                     value={data.durationYears}
@@ -123,21 +123,22 @@ console.log(data.cadre);
                 </Form.Group>
               </Col>
             </Row>
-                {
-                  data.name === "" || data.professionalQualification === "" || data.durationYears === "" || data.cadre === "" ? ("Kindly fill all fields"
-            ):
-            <div className="mt-3">
-            <Button variant="primary" type="submit">
-              {isLoading ? 'creating event...' : 'create new event'}
-            </Button>
-          </div>
-            }
+            {data.name === "" ||
+            data.professionalQualification === "" ||
+            data.durationYears === "" ||
+            data.cadre === "" ? (
+              "Kindly fill all fields"
+            ) : (
+              <div className="mt-3">
+                <Button variant="primary" type="submit">
+                  {isLoading ? "creating event..." : "create new event"}
+                </Button>
+              </div>
+            )}
           </Form>
           {error && error}
         </Col>
       </Row>
-
-
     </>
   );
 };

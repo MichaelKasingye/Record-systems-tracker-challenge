@@ -10,9 +10,9 @@ import withReactContent from "sweetalert2-react-content";
 import {
   projectsSelector,
   createProjectAsync,
-} from "../features/projects/projectSlice";
+} from "../features/contact/contactSlice";
 import { createEventAsync, EntriesSelector,updateEventAsync,deleteEntryAsync } from '../features/Entries/entriesSlice';
-import { imageSelector } from '../features/images/imageSlice';
+// import { imageSelector } from '../features/images/imageSlice';
 import { ButtonAFilled, ButtonAOutlined } from "./Buttons";
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
@@ -21,6 +21,7 @@ import { selectOptions, customStyles } from './SelectOptions';
 import Select from 'react-select';
 import ImageUpload from "./ImageUpload";
 import ProgressBar from 'react-bootstrap/ProgressBar'
+import { entryIdDelete } from "../service/EntryHooks/entriesService";
 
 
 
@@ -48,7 +49,7 @@ const dispatch = useDispatch();
 
   const handleSubmitDelete = (e) => {
     e.preventDefault();
-    dispatch(deleteEntryAsync(id));
+    entryIdDelete(id)
     customButton.fire('Deleted', 'Product Deleted successfully');
   };
 

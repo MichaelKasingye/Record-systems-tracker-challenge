@@ -202,12 +202,12 @@ const Sidebar = (props = {}) => {
                 icon={faUserAlt}
                 link={"/dashboard/districts"}
               />
-              {/* <NavItem
-                title="Projects"
-                icon={faBriefcase}
-                link={"/dashboard/addProject"}
-              />
               <NavItem
+                title="All Training Schools"
+                icon={faBriefcase}
+                link={"/dashboard/trainingSchools"}
+              />
+              {/* <NavItem
                 title="Enrollment"
                 icon={faBook}
                 link={Routes.Enrollment.path}
