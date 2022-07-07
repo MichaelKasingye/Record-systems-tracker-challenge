@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { useDispatch } from "react-redux";
 import { Row, Col, Card, Form, Image } from "@themesberg/react-bootstrap";
-import { uploadImageAsync } from "../features/images/imageSlice";
 
 const ImageUpload = () => {
   const dispatch = useDispatch();
@@ -17,7 +16,7 @@ const ImageUpload = () => {
           preview: URL.createObjectURL(file),
         }))
       );
-      dispatch(uploadImageAsync(files[0]));
+      // dispatch(uploadImageAsync(files[0]));
       // console.log(files);
     },
   });

@@ -1,4 +1,5 @@
 /* eslint-disable react/no-danger-with-children */
+/* eslint-disable no-unused-vars */
 
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -131,7 +132,8 @@ export const CircleChartWidget = (props) => {
 
             {data.map(d => (
               <h6 key={`circle-element-${d.id}`} className="fw-normal text-gray">
-                <FontAwesomeIcon icon={d.icon} className={`icon icon-xs text-${d.color} w-20 me-1`} />
+                {/* <FontAwesomeIcon icon={d.icon} className={`icon icon-xs text-${d.color} w-20 me-1`} /> */}
+          {/* <FontAwesomeIcon icon={icon} className="me-1" /> {btnText} */}
                 {` ${d.label} `}{`${d.value}%`}
               </h6>
             ))}
@@ -178,9 +180,9 @@ export const BarChartWidget = (props) => {
   );
 };
 
-export const TeamMembersWidget = () => {
+export const TeamMembersWidget = ({name, cadre, durationYears, professionalQualification}) => {
   const TeamMember = (props) => {
-    const { name, statusKey, image, icon, btnText } = props;
+    const { statusKey, } = props;
     const status = {
       online: { color: "success", label: "Online" },
       inMeeting: { color: "warning", label: "In a meeting" },
@@ -191,44 +193,106 @@ export const TeamMembersWidget = () => {
       , statusLabel = status[statusKey] ? status[statusKey].label : 'Offline';
 
     return (
+      <>
       <ListGroup.Item className="px-0">
         <Row className="align-items-center">
           <Col className="col-auto">
-            <a href="#top" className="user-avatar">
-              <Image src={image} className="rounded-circle" />
-            </a>
+          <Button variant="tertiary" size="sm">
+            </Button>
           </Col>
           <Col className="ms--2">
             <h4 className="h6 mb-0">
-              <a href="#!">{name}</a>
+              <a href="#!">Name </a>
             </h4>
             <span className={`text-${statusColor}`}>● </span>
-            <small>{statusLabel}</small>
+            <small>{name}</small>
           </Col>
           <Col className="col-auto">
             <Button variant="tertiary" size="sm">
-              <FontAwesomeIcon icon={icon} className="me-1" /> {btnText}
             </Button>
           </Col>
         </Row>
       </ListGroup.Item>
+
+      <ListGroup.Item className="px-0">
+      <Row className="align-items-center">
+        <Col className="col-auto">
+        <Button variant="tertiary" size="sm">
+          </Button>
+        </Col>
+        <Col className="ms--2">
+          <h4 className="h6 mb-0">
+            <a href="#!">Cardre </a>
+          </h4>
+          <span className={`text-${statusColor}`}>● </span>
+          <small>{cadre}</small>
+        </Col>
+        <Col className="col-auto">
+          <Button variant="tertiary" size="sm">
+          </Button>
+        </Col>
+      </Row>
+    </ListGroup.Item>
+
+    <ListGroup.Item className="px-0">
+    <Row className="align-items-center">
+      <Col className="col-auto">
+      <Button variant="tertiary" size="sm">
+        </Button>
+      </Col>
+      <Col className="ms--2">
+        <h4 className="h6 mb-0">
+          <a href="#!">Duration </a>
+        </h4>
+        <span className={`text-${statusColor}`}>● </span>
+        <small>{durationYears}</small>
+      </Col>
+      <Col className="col-auto">
+        <Button variant="tertiary" size="sm">
+        </Button>
+      </Col>
+    </Row>
+  </ListGroup.Item>
+
+  <ListGroup.Item className="px-0">
+  <Row className="align-items-center">
+    <Col className="col-auto">
+    <Button variant="tertiary" size="sm">
+      </Button>
+    </Col>
+    <Col className="ms--2">
+      <h4 className="h6 mb-0">
+        <a href="#!">Professional Qualification </a>
+      </h4>
+      <span className={`text-${statusColor}`}>● </span>
+      <small>{professionalQualification}</small>
+    </Col>
+    <Col className="col-auto">
+      <Button variant="tertiary" size="sm">
+      </Button>
+    </Col>
+  </Row>
+</ListGroup.Item>
+</>
     );
   };
 
   return (
     <Card border="light" className="shadow-sm">
-      <Card.Header className="border-bottom border-light d-flex justify-content-between">
-        <h5 className="mb-0">Team members</h5>
+      {/* <Card.Header className="border-bottom border-light d-flex justify-content-between">
+        <h5 className="mb-0">Courses</h5>
         <Button variant="secondary" size="sm">See all</Button>
-      </Card.Header>
+      </Card.Header> */}
       <Card.Body>
         <ListGroup className="list-group-flush list my--3">
-          {teamMembers.map(tm => <TeamMember key={`team-member-${tm.id}`} {...tm} />)}
+         <TeamMember/>
         </ListGroup>
       </Card.Body>
     </Card>
   );
 };
+// -----------------------------------------------------------
+// ------------------------------------------------------------
 
 export const ProgressTrackWidget = () => {
   const Progress = (props) => {
@@ -274,44 +338,48 @@ export const ProgressTrackWidget = () => {
   );
 };
 
-export const RankingWidget = () => {
+export const RankingWidget = ({info1,info2,info3,info1Title,info2Title,info3Title}) => {
   return (
     <Card border="light" className="shadow-sm">
       <Card.Body>
         <div className="d-flex align-items-center justify-content-between border-bottom border-light pb-3">
+          
           <div>
-            <h6><FontAwesomeIcon icon={faGlobeEurope} className="icon icon-xs me-3" /> Global Rank</h6>
+            <h6> {info1Title}: </h6>
+            <div className="small card-stats"><span className="text-success">● </span>
+            {info1}
+            </div>
           </div>
           <div>
-            <Card.Link href="#" className="text-primary fw-bold">
-              #755 <FontAwesomeIcon icon={faChartLine} className="ms-2" />
-            </Card.Link>
+            {/* <Card.Link href="#" className="text-primary fw-bold">
+              #755 
+            </Card.Link> */}
           </div>
         </div>
         <div className="d-flex align-items-center justify-content-between border-bottom border-light py-3">
           <div>
-            <h6 className="mb-0"><FontAwesomeIcon icon={faFlagUsa} className="icon icon-xs me-3" />Country Rank</h6>
-            <div className="small card-stats">
-              United States <FontAwesomeIcon icon={faAngleUp} className="icon icon-xs text-success ms-2" />
+            <h6 className="mb-0">{info2Title}</h6>
+            <div className="small card-stats"> <span className="text-success">● </span>
+            {info2}
             </div>
           </div>
           <div>
-            <Card.Link href="#top" className="text-primary fw-bold">
-              #32 <FontAwesomeIcon icon={faChartLine} className="ms-2" />
-            </Card.Link>
+            {/* <Card.Link href="#top" className="text-primary fw-bold">
+              #32 
+            </Card.Link> */}
           </div>
         </div>
         <div className="d-flex align-items-center justify-content-between pt-3">
           <div>
-            <h6 className="mb-0"><FontAwesomeIcon icon={faFolderOpen} className="icon icon-xs me-3" />Category Rank</h6>
-            <Card.Link href="#top" className="small card-stats">
-              Travel &gt; Accomodation
+            <h6 className="mb-0">{info3Title}</h6>
+            <Card.Link href="#top" className="small card-stats"><span className="text-success">● </span>
+            {info3}
             </Card.Link>
           </div>
           <div>
-            <Card.Link href="#top" className="text-primary fw-bold">
-              #16 <FontAwesomeIcon icon={faChartLine} className="ms-2" />
-            </Card.Link>
+            {/* <Card.Link href="#top" className="text-primary fw-bold">
+              #16 
+            </Card.Link> */}
           </div>
         </div>
       </Card.Body>
@@ -409,7 +477,7 @@ export const DescriptionWidget2 = ({info, title}) => {
     <Card border="light" className="shadow-sm">
       <Card.Body>
         <h5>{title}</h5>
-        {info.map((data, index) => (
+        {/* {info.map((data, index) => (
           <div key={index}>
             <img src={data.img_url} alt="splash" width={50} height={50}/>
           <p className="m-0"> <span className="h6 m-0">Title:</span> {data.title}</p>
@@ -419,7 +487,7 @@ export const DescriptionWidget2 = ({info, title}) => {
           ))}
           <span className="h6 m-0">Description: </span> <p dangerouslySetInnerHTML={{ __html: data.body }}  className="m-0" />  
           </div>
-        ))}
+        ))} */}
        
       </Card.Body>
     </Card>

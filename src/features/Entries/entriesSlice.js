@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import createEvent from "../../service/EntryHooks/EntryService";
+import createEvent from "../../service/EntryHooks/znullFillInfo";
 
-import deleteEntry from "../../service/EntryHooks/DeleteService";
+import deleteEntry from "../../service/EntryHooks/znullFill";
 import {useRegistrationData} from "../../service/EntryHooks/entriesService";
-import getAnEntryService from "../../service/EntryHooks/getAnEntryService";
-import UpdateEntryService from "../../service/EntryHooks/UpdateEntryService";
+import getAnEntryService from "../../service/EntryHooks/znullFilloff";
+import UpdateEntryService from "../../service/EntryHooks/znullFillnote";
 
 const initialState = {
   Entries: [],

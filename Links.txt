@@ -1,3 +1,17 @@
 Fix ssl issues: https://flaviocopes.com/react-how-to-configure-https-localhost/
 
+// function fetchData() {
+//         fetch('http://www.registration.unmc.ug/api/v1/contacts/', {
+//   headers: {
+//     Accept: 'application/json',
+//     Authentication: 'JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU2NTc0MTcwLCJqdGkiOiJkNjEyMTViN2I5ZWY0OTc5YmQ5MGJiNTI0NWM1ZTZlMSIsInVzZXJfaWQiOiJlZmI0ZTFlNy1hOTA1LTQxZmQtOTAwOC0yNTU0MjYzNGQzY2MiLCJyb2xlIjoiYXBwbGljYW50In0.jvYMv_8tOLHZJPQziNUU_xZZ2x8UGUEelWZtU_qlBgQ',
+//     'X-Custom-Header': 'header value'
+//   }
+// })
+//    .then(resp => resp.json())
+//    .then(json =>  (json).data)
+      
+
+// }
+
 
