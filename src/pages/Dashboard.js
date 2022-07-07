@@ -22,11 +22,11 @@ import {
 import { PageVisitsTable } from "../components/Tables";
 import { trafficShares, totalOrders } from "../data/charts";
 import { AnalyticsWidget } from "../components/AnalyticsWidget";
-import { EntriesSelector, fetchEntriesAsync } from "../features/Entries/entriesSlice";
-import { usersSelector } from "../features/users/usersSlice";
-import { fetchProjectsAsync } from "../features/projects/projectSlice";
+import { fetchProjectsAsync } from "../features/contact/contactSlice";
 import { fetchUsersAsync } from "../features/users/usersSlice";
 
+import { EntriesSelector, fetchEntriesAsync } from "../features/Entries/entriesSlice";
+import { usersSelector } from "../features/users/usersSlice";
 const Dashboard = () => {
   const { Entries, loading, hasErrors } = useSelector(EntriesSelector);
   const { users } = useSelector(usersSelector)

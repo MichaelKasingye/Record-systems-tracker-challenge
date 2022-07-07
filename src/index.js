@@ -16,12 +16,17 @@ import { ScrollToTop } from "./components/index"
 import { Provider } from "react-redux";
 import  store  from "./store";
 
+import {StateProvider} from "./ContextAPI/StateProvider";
+import reducer,{initialState} from "./ContextAPI/Reducer";
+
 ReactDOM.render(
   <React.StrictMode>
     <HashRouter basename="/">
       <ScrollToTop />
       <Provider store={store}>
+    <StateProvider initialState={initialState} reducer={reducer}>
         <App />
+    </StateProvider>
       </Provider>
     </HashRouter>
   </React.StrictMode>,

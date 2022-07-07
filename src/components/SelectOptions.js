@@ -1,11 +1,10 @@
-
+  
   export const selectOptions = [
     { value: 'accessories', label: 'Accessories' },
     { value: 'headsets', label: 'Headsets' },
     { value: 'USBs', label: 'USBs' },
     { value: 'phone cases', label: 'Phone Cases' },
   ];
-
   export const customStyles = {
     control: (provided) => ({
       ...provided,

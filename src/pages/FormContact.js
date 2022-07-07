@@ -30,7 +30,7 @@ const FormContact = () => {
   console.log(isLoading);
   localStorage.setItem(
     "JWT",
-    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU2NTc0MTcwLCJqdGkiOiJkNjEyMTViN2I5ZWY0OTc5YmQ5MGJiNTI0NWM1ZTZlMSIsInVzZXJfaWQiOiJlZmI0ZTFlNy1hOTA1LTQxZmQtOTAwOC0yNTU0MjYzNGQzY2MiLCJyb2xlIjoiYXBwbGljYW50In0.jvYMv_8tOLHZJPQziNUU_xZZ2x8UGUEelWZtU_qlBgQ"
+    "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU2NTc0MTcwLCJqdGkiOiJkNjEyMTViN2I5ZWY0OTc5YmQ5MGJiNTI0NWM1ZTZlMSIsInVzZXJfaWQiOiJlZmI0ZTFlNy1hOTA1LTQxZmQtOTAwOC0yNTU0MjYzNGQzY2MiLCJyb2xlIjoiYXBwbGljYW50In0.jvYMv_8tOLHZJPQziNUU_xZZ2x8UGUEelWZtU_qlBgQ"
   );
 
   const handleSubmit = (e) => {
@@ -64,7 +64,7 @@ const FormContact = () => {
                     required
                     type="number"
                     max="100000000"
-                    maxLength = "10"
+                    maxLength="10"
                     placeholder="Enter Number"
                     name="phoneNumber"
                     value={data.phoneNumber}
@@ -74,19 +74,16 @@ const FormContact = () => {
               </Col>
             </Row>
             <div className="mt-3">
-                {data.phoneNumber && (
+              {data.phoneNumber && (
                 <Button variant="primary" type="submit">
-              {isLoading ? 'creating event...' : 'create new event'}
-            </Button>
-            )}
-            
-          </div>
+                  {isLoading ? "creating event..." : "create new event"}
+                </Button>
+              )}
+            </div>
           </Form>
           {error && error}
         </Col>
       </Row>
-
-
     </>
   );
 };

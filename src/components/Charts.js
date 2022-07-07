@@ -4,12 +4,12 @@ import { useSelector } from "react-redux";
 import Chartist from "react-chartist";
 import ChartistTooltip from 'chartist-plugin-tooltips-updated';
 import { EntriesSelector } from "../features/Entries/entriesSlice";
-import { projectsSelector } from "../features/projects/projectSlice"
+// import { projectsSelector } from "../features/projects/projectSlice"
 import { usersSelector } from "../features/users/usersSlice"
 
 export const GeneralValueChart = () => {
   const { Entries } = useSelector(EntriesSelector)
-  const { projects } = useSelector(projectsSelector)
+  const { projects } = useSelector()
   const { users } = useSelector(usersSelector)
 
   const data = {

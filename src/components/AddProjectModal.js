@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -11,10 +13,10 @@ import {
 } from "@themesberg/react-bootstrap";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import {
-  projectsSelector,
-  createProjectAsync,
-} from "../features/projects/projectSlice";
+// import {
+//   projectsSelector,
+//   createProjectAsync,
+// } from "../features/projects/projectSlice";
 
 const customButton = withReactContent(
   Swal.mixin({
@@ -26,7 +28,7 @@ const customButton = withReactContent(
 );
 
 const AddProjectModal = ({ show, handleClose }) => {
-  const { loading, hasErrors } = useSelector(projectsSelector);
+  const { loading, hasErrors } = useSelector();
   const dispatch = useDispatch();
   const [data, setData] = useState({
     title: "",
@@ -39,7 +41,7 @@ const AddProjectModal = ({ show, handleClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(createProjectAsync(data));
+    // dispatch(createProjectAsync(data));
 
     if (hasErrors) return console.log("error");
     customButton.fire("Success", "Project added successfully", "success");

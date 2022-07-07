@@ -1,26 +1,29 @@
 import Dashboard from "./Dashboard";
 import Contacts from "./Contacts";
 import Login from "./Login";
-import NewEntry from "./NewEntry";
 import NotFound from "./NotFound";
-import FormContact from "./FormContact";
 import Addproject from "./Addproject";
-import EditEvent from "./EditEvent";
+import EditEntry from "./ViewEntry";
 import Districts from "./Districts";
 import Courses from "./Courses";
+import Trainings from "./Trainings";
+
+import FormContact from "./FormContact";
 import FormCourses from "./FormCourses";
+import FormTraining from "./FormTraining";
 
 
 export {
   Dashboard,
-  FormCourses,
+  Trainings,
   Contacts,
   Login,
-  NewEntry,
   NotFound,
   FormContact,
+  FormCourses,
+  FormTraining,
   Addproject,
-  EditEvent,
+  EditEntry,
   Districts,
   Courses,
 };
